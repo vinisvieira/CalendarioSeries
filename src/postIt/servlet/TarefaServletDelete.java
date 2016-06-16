@@ -1,4 +1,4 @@
-package calendarioSeries.servlet;
+package postIt.servlet;
 
 import java.io.IOException;
 import java.util.Map;
@@ -9,20 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import calendarioSeries.entity.Series;
-import calendarioSeries.repository.impl.SeriesRepository;
-import calendarioSeries.util.Constants;
+import postIt.entity.Tarefa;
+import postIt.repository.impl.TarefaRepositorio;
+import postIt.util.Constants;
 
 /**
  * Servlet implementation class SeriesServletDelete
  */
-@WebServlet("/series-servlet-delete")
-public class SeriesServletDelete extends HttpServlet {
+@WebServlet("/tarefa-servlet-delete")
+public class TarefaServletDelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private SeriesRepository seriesRepository;
+	private TarefaRepositorio seriesRepository;
 
-	public SeriesServletDelete() {
+	public TarefaServletDelete() {
 		super();
 
 	}
@@ -31,17 +31,16 @@ public class SeriesServletDelete extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 
 		Map<String, String[]> params = request.getParameterMap();
-		this.seriesRepository = SeriesRepository.getInstance();
-		Series series = this.seriesRepository.read(Integer.parseInt(params
+		this.seriesRepository = TarefaRepositorio.getInstance();
+		Tarefa tarefa = this.seriesRepository.procurar(Integer.parseInt(params
 				.get(Constants.ID_PARAM)[0]));
 
-		if (series != null) {
-			boolean result = this.seriesRepository.delete(series);
+		if (tarefa != null) {
+			boolean result = this.seriesRepository.deletar(tarefa);
 
 			if (result) {
-				response.getWriter().append(
-						"Serie " + series.getName() + " deletado com sucesso!");
-				response.sendRedirect("listar-series.jsp");
+				response.getWriter().append("Tarefa " + tarefa.getTituloTarefa() + " deletado com sucesso!");
+				response.sendRedirect("listar-tarefa.jsp");
 			} else {
 				response.getWriter().append("Ocorreu um erro na Operação");
 				response.sendRedirect("index.jsp");

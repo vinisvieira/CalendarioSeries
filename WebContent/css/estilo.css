@@ -14,7 +14,7 @@ p{
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  line-height: 1.8em;
+  line-height: 2.0em;
   background: url("../imagens/planofundo.jpg");
   color: #4D4D4D;
 }
@@ -143,7 +143,7 @@ div {
 	width: 700px;
 	height: 500px; 
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: rgba(242, 242, 242, 0.89);
     padding: 20px;
 }
 

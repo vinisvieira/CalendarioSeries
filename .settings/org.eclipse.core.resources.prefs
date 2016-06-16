@@ -1,10 +1,6 @@
 eclipse.preferences.version=1
-encoding//WebContent/cadastrar-series.jsp=UTF-8
-encoding//WebContent/editar-series.jsp=UTF-8
-encoding//WebContent/index.jsp=UTF-8
-encoding//WebContent/listar-series.jsp=UTF-8
-encoding//src/calendarioSeries/entity/Series.java=UTF-8
-encoding//src/calendarioSeries/repository/impl/SeriesRepository.java=UTF-8
-encoding//src/calendarioSeries/servlet/SeriesServlet.java=UTF-8
-encoding//src/calendarioSeries/util/Constants.java=UTF-8
-encoding//src/calendarioSeries/util/RequestUtil.java=UTF-8
+encoding//WebContent/cadastrar-tarefa.jsp=UTF-8
+encoding//src/postIt/entity/Tarefa.java=UTF-8
+encoding//src/postIt/repository/impl/TarefaRepositorio.java=UTF-8
+encoding//src/postIt/servlet/TarefaServlet.java=UTF-8
+encoding//src/postIt/util/Constants.java=UTF-8

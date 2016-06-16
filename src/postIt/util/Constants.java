@@ -1,4 +1,4 @@
-package calendarioSeries.util;
+package postIt.util;
 
 public class Constants {
 

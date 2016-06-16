@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="calendarioSeries.entity.Series"%>
-<%@ page import="calendarioSeries.repository.impl.SeriesRepository"%>
+<%@ page import="postIt.entity.Tarefa"%>
+<%@ page import="postIt.repository.impl.TarefaRepositorio"%>
 <%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -15,8 +15,8 @@
 	<nav>
 	<ul>
 		<li><a href="index.jsp"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-		<li><a href="cadastrar-series.jsp"><i class="fa fa-film" aria-hidden="true"></i> Nova Serie</a></li><br>
-		<li><a href="listar-series.jsp"><i class="fa fa-list-alt" aria-hidden="true"></i> Minhas Series</a></li>
+		<li><a href="cadastrar-tarefa.jsp"><i class="fa fa-film" aria-hidden="true"></i> Nova Serie</a></li><br>
+		<li><a href="listar-tarefa.jsp"><i class="fa fa-list-alt" aria-hidden="true"></i> Minhas Series</a></li>
 	</ul>
 	</nav>
 
@@ -36,20 +36,17 @@
 			</tr>
 			<tr>
 				<%
-						ArrayList<Series> series = (ArrayList<Series>) SeriesRepository.getInstance()
-								.read();
-						int i = 1;
+					ArrayList<Tarefa> tarefas = (ArrayList<Tarefa>) TarefaRepositorio.getInstance()
+												.listar();
+										int i = 1;
 
-						for (Series serie : series) {
+										for (Tarefa tarefa : tarefas) {
 				%>
-				<td><%=serie.getName()%></td>
-				<td><%=serie.getTemporada()%></td>
-				<td><%=serie.getEpisodio()%></td>
-				<td><%=serie.getDia()%></td>
-				<td><%=serie.getComplemento()%></td>
+				<td><%=tarefa.getTituloTarefa()%></td>
+				<td><%=tarefa.getDescricaoTarefa()%></td>
 				
-				<td><a href="series-servler-edit?i=<%=serie.getId()%>" >Editar</a></td>
-				<td><a href="series-servlet-delete?id=<%=serie.getId()%>" >Excluir</a></td>
+				<td><a href="tarefa-servler-edit?i=<%=tarefa.getId()%>" >Editar</a></td>
+				<td><a href="tarefa-servlet-delete?id=<%=tarefa.getId()%>" >Excluir</a></td>
 			</tr>
 			<%
 			i++;

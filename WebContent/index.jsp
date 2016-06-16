@@ -13,10 +13,10 @@
 	<ul>
 		<li><a href="index.jsp"><i class="fa fa-home"
 				aria-hidden="true"></i> Home</a></li>
-		<li><a href="cadastrar-series.jsp"><i class="fa fa-film"
+		<li><a href="cadastrar-tarefa.jsp"><i class="fa fa-film"
 				aria-hidden="true"></i> Nova Serie</a></li>
 		<br>
-		<li><a href="listar-series.jsp"><i class="fa fa-list-alt"
+		<li><a href="listar-tarefa.jsp"><i class="fa fa-list-alt"
 				aria-hidden="true"></i> Minhas Series</a></li>
 	</ul>
 	</nav>
